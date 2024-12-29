@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Babylon Soft - Business Automation Software</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f9f9;
+        }
+
+        header {
+            background: #4CAF50;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+
+        nav a {
+            color: #4CAF50;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem;
+        }
+
+        .program {
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .program h2 {
+            margin-bottom: 0.5rem;
+        }
+
+        .program p {
+            margin-bottom: 1rem;
+        }
+
+        .program .price {
+            font-weight: bold;
+            color: #4CAF50;
+            margin-bottom: 1rem;
+        }
+
+        .program button {
+            background: #4CAF50;
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .program button:hover {
+            background: #45a049;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 2rem;
+            padding: 1rem;
+            background: #4CAF50;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Babylon Soft</h1>
+        <p>Advanced Business Automation Software</p>
+    </header>
+    <nav>
+        <a href="#">Home</a>
+        <a href="#products">Products</a>
+        <a href="#contact">Contact</a>
+    </nav>
+    <div class="container">
+        <section id="products">
+            <article class="program">
+                <h2>Program A</h2>
+                <p>Optimize your inventory management and improve supply chain efficiency.</p>
+                <p class="price">$199 / ₴7200</p>
+                <button onclick="downloadProgram('Program A')">Download</button>
+            </article>
+
+            <article class="program">
+                <h2>Program B</h2>
+                <p>Automate your customer relationship management and increase sales productivity.</p>
+                <p class="price">$299 / ₴10800</p>
+                <button onclick="downloadProgram('Program B')">Download</button>
+            </article>
+
+            <article class="program">
+                <h2>Program C</h2>
+                <p>Comprehensive accounting solutions for small and medium businesses.</p>
+                <p class="price">$249 / ₴9000</p>
+                <button onclick="downloadProgram('Program C')">Download</button>
+            </article>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Babylon Soft. All rights reserved. Contact: <a href="mailto:suppotr@bsoft.net.ua">suppotr@bsoft.net.ua</a></p>
+    </footer>
+
+    <script>
+        function downloadProgram(programName) {
+            alert(`You are downloading ${programName}!`);
+            // You can replace the alert with actual download functionality.
+        }
+    </script>
+</body>
+</html>
