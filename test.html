@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Редактируемый Grid</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+    <style>
+        table { border-collapse: collapse; }
+        th, td { border: 1px solid black; padding: 5px; }
+        input[type=text] { width: 100%; }
+    </style>
+</head>
+<body>
+
+<table id="myGrid">
+    <tr>
+        <th>Имя</th>
+        <th>Возраст</th>
+        <th>Адрес</th>
+    </tr>
+    <tr>
+        <td><input type="text" value="John"></td>
+        <td><input type="text" value="30"></td>
+        <td><input type="text" value="New York"></td>
+    </tr>
+    <tr>
+        <td><input type="text" value="Jane"></td>
+        <td><input type="text" value="25"></td>
+        <td><input type="text" value="Los Angeles"></td>
+    </tr>
+</table>
+
+<script>
+$(document).ready(function() {
+    // Назначение события двойного клика для редактирования ячеек
+    $('#myGrid td').on('dblclick', function() {
+        var input = '<input type="text" value="' + $(this).text() + '">';
+        $(this).html(input);
+        $('input', this).focus();
+
+        // Обработка нажатия клавиши Enter или нажатия кнопки "Готово"
+        $('input', this).on('keyup', function(e) {
+            if (e.keyCode == 13 || e.target.value === '') {
+                var newValue = $(this).val();
+                $(this).parent().text(newValue);
+            }
+        });
+    });
+});
+</script>
+
+</body>
+</html>
