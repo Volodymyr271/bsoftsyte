@@ -1,218 +1,248 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Small Business Automation Software</title>
+    <title>BizAuto — Программы для автоматизации бизнеса</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --primary: #2563eb;
+            --primary-hover: #1d4ed8;
+            --dark: #1f2937;
+            --light: #f9fafb;
+        }
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Inter', sans-serif;
         }
 
-        /* Header Styles */
-        header {
-            background-color: #f8f9fa;
-            padding: 20px 0;
+        body {
+            line-height: 1.6;
+            color: var(--dark);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        /* Header */
+        .header {
+            background: var(--light);
+            padding: 1rem 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .nav {
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
 
-        nav {
-            display: flex;
-            gap: 30px;
-        }
-
         .logo {
-            font-size: 24px;
-            font-weight: bold;
-            color: #333;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: #333;
-            font-weight: 500;
-        }
-
-        .contact-info {
-            display: flex;
-            gap: 20px;
-        }
-        .contact-info a {
-            text-decoration: none;
-            color: #666;
-            font-size: 16px;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
         }
 
         /* Hero Section */
         .hero {
-            padding: 100px 0;
+            padding: 6rem 0;
             text-align: center;
-            background-color: #fff;
+            background: linear-gradient(45deg, #eff6ff, #ffffff);
         }
 
         .hero h1 {
-            font-size: 48px;
-            margin-bottom: 20px;
-            color: #333;
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
         }
 
-        .hero p {
-            max-width: 800px;
-            margin: 0 auto 40px;
-            line-height: 1.6;
-            color: #666;
+        /* Features Grid */
+        .features {
+            padding: 4rem 0;
+            background: var(--light);
         }
 
-        /* Categories Section */
-        .categories {
-            padding: 80px 0;
-            background-color: #f8f9fa;
-        }
-
-        .categories h2 {
-            text-align: center;
-            margin-bottom: 40px;
-            font-size: 36px;
-            color: #333;
-        }
-
-        .category-grid {
+        .features-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-            max-width: 1200px;
-            margin: 0 auto;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
         }
 
-        .category-card {
-            background-color: #fff;
-            border-radius: 10px;
-            padding: 20px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        .feature-card {
+            padding: 2rem;
+            border-radius: 12px;
+            background: white;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
             transition: transform 0.3s ease;
         }
 
-        .category-card:hover {
+        .feature-card:hover {
             transform: translateY(-5px);
         }
 
-        /* Comparison Chart */
-        .comparison-chart {
-            padding: 80px 0;
-            background-color: #fff;
-            text-align: center;
+        /* Products Section */
+        .products {
+            padding: 4rem 0;
         }
 
-        .chart-container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .chart-grid {
+        .products-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 40px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .product-card {
+            border: 1px solid #e5e7eb;
+            border-radius: 12px;
+            overflow: hidden;
+            transition: box-shadow 0.3s ease;
+        }
+
+        .product-card:hover {
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .product-image {
+            height: 200px;
+            background: #e5e7eb;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         /* Pricing Section */
         .pricing {
-            padding: 80px 0;
-            background-color: #f8f9fa;
+            padding: 4rem 0;
+            background: var(--light);
         }
 
-        .pricing h2 {
-            text-align: center;
-            margin-bottom: 40px;
-            font-size: 36px;
-            color: #333;
-        }
-
-        /* Testimonials Section */
-        .testimonials {
-            padding: 80px 0;
-            background-color: #fff;
-        }
-
-        .testimonial-grid {
+        .pricing-cards {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            max-width: 1200px;
-            margin: 0 auto;
+            gap: 2rem;
+            margin-top: 3rem;
         }
 
-        .testimonial-card {
-            background-color: #f8f9fa;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        }
-
-        /* Footer */
-        footer {
-            background-color: #333;
-            color: white;
-            padding: 40px 0;
+        .price-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
             text-align: center;
         }
 
-        .social-links a {
+        .price-card.popular {
+            border: 2px solid var(--primary);
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            background: var(--primary);
             color: white;
-            margin: 0 10px;
+            border-radius: 8px;
             text-decoration: none;
+            font-weight: 500;
+            transition: background 0.3s ease;
+        }
+
+        .btn:hover {
+            background: var(--primary-hover);
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
         }
     </style>
 </head>
 <body>
-    <header>
-        <nav>
-            <div class="logo">AutoMate Pro</div>
+    <header class="header">
+        <nav class="nav container">
+            <div class="logo">BizAuto</div>
             <div class="nav-links">
-                <a href="#home">Home</a>
-                <a href="#features">Features</a>
-                <a href="#pricing">Pricing</a>
-                <a href="#contact">Contact</a>
-            </div>
-            <div class="contact-info">
-                <a href="tel:+1234567890">Call Us: (123) 456-7890</a>
-                <a href="mailto:support@automatepro.com">Email Us: support@automatepro.com</a>
+                <a href="#features" class="btn">Возможности</a>
+                <a href="#products" class="btn">Программы</a>
             </div>
         </nav>
     </header>
 
     <section class="hero">
-        <h1>Transform Your Small Business with AutoMate Pro</h1>
-        <p>Automate your workflows, save time and reduce costs with our comprehensive suite of tools for small businesses.</p>
-        <button class="cta-button">Get Started Today</button>
-    </section>
-
-    <section class="categories">
-        <h2>Categories of Software Tools</h2>
-        <div class="category-grid">
-            <div class="category-card">
-                <h3>Scheduling & Time Management</h3>
-                <p>Manage your team's schedule, track time off, and automate workflows for seamless operations.</p>
-            </div>
-            <div class="category-card">
-                <h3>Financial Accounting</h3>
-                <p>Easy bookkeeping, invoicing, and financial reporting to keep your business finances in order.</p>
-            </div>
-            <div class="category-card">
-                <h3>Customer Relations</h3>
-                <p>Automated CRM system for managing customer interactions and improving client relationships.</p>
+        <div class="container">
+            <h1>Автоматизируйте ваш бизнес с нашими решениями</h1>
+            <p class="subtitle">Набор профессиональных инструментов для управления и масштабирования бизнеса</p>
+            <div class="cta-buttons" style="margin-top: 2rem;">
+                <a href="#products" class="btn">Выбрать программу</a>
             </div>
         </div>
     </section>
 
-    <!-- Add more sections as needed -->
+    <section id="features" class="features">
+        <div class="container">
+            <h2 style="text-align: center;">Ключевые возможности</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <h3>Автоматизация отчетности</h3>
+                    <p>Генерация финансовых и аналитических отчетов в один клик</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Управление задачами</h3>
+                    <p>Система постановки и контроля задач для сотрудников</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Интеграции</h3>
+                    <p>Подключение популярных сервисов и банковских эквайрингов</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="products" class="products">
+        <div class="container">
+            <h2 style="text-align: center;">Наши программы</h2>
+            <div class="products-grid">
+                <div class="product-card">
+                    <div class="product-image">
+                        <!-- Добавить изображение -->
+                    </div>
+                    <div style="padding: 1.5rem;">
+                        <h3>Retail Pro</h3>
+                        <p>Автоматизация розничной торговли</p>
+                        <div style="margin-top: 1rem;">
+                            <a href="#" class="btn">Подробнее</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-image">
+                        <!-- Добавить изображение -->
+                    </div>
+                    <div style="padding: 1.5rem;">
+                        <h3>Service Master</h3>
+                        <p>Управление сервисным центром</p>
+                        <div style="margin-top: 1rem;">
+                            <a href="#" class="btn">Подробнее</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <script>
-        // Smooth scrolling for navigation links
+        // Добавьте здесь JavaScript для интерактивности
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -221,36 +251,6 @@
                 });
             });
         });
-
-        // Modal popup
-        const modal = document.createElement('div');
-        modal.className = 'modal';
-        modal.innerHTML = `
-            <div class="modal-content">
-                <span class="close">&times;</span>
-                <h2>Welcome to AutoMate Pro</h2>
-                <p>Join thousands of satisfied small business owners who have transformed their operations with our software solutions.</p>
-                <button class="start-button">Start Free Trial</button>
-            </div>
-        `;
-
-        document.body.appendChild(modal);
-
-        // Close modal
-        const close = document.querySelector('.close');
-        if (close) {
-            close.addEventListener('click', () => {
-                modal.style.display = 'none';
-            });
-        }
-
-        // Show modal
-        const trigger = document.querySelector('.trigger-modal');
-        if (trigger) {
-            trigger.addEventListener('click', () => {
-                modal.style.display = 'block';
-            });
-        }
     </script>
 </body>
 </html>
