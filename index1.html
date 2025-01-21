@@ -3,86 +3,254 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Babylon Soft - Современные программы</title>
-    <link rel="stylesheet" href="styles1.css">
-    <link rel="icon" href="bsicon.ico" type="image/x-icon">
+    <title>Small Business Automation Software</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: #f8f9fa;
+            padding: 20px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav {
+            display: flex;
+            gap: 30px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+        }
+
+        .contact-info {
+            display: flex;
+            gap: 20px;
+        }
+        .contact-info a {
+            text-decoration: none;
+            color: #666;
+            font-size: 16px;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 100px 0;
+            text-align: center;
+            background-color: #fff;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .hero p {
+            max-width: 800px;
+            margin: 0 auto 40px;
+            line-height: 1.6;
+            color: #666;
+        }
+
+        /* Categories Section */
+        .categories {
+            padding: 80px 0;
+            background-color: #f8f9fa;
+        }
+
+        .categories h2 {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 36px;
+            color: #333;
+        }
+
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .category-card {
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .category-card:hover {
+            transform: translateY(-5px);
+        }
+
+        /* Comparison Chart */
+        .comparison-chart {
+            padding: 80px 0;
+            background-color: #fff;
+            text-align: center;
+        }
+
+        .chart-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .chart-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+        }
+
+        /* Pricing Section */
+        .pricing {
+            padding: 80px 0;
+            background-color: #f8f9fa;
+        }
+
+        .pricing h2 {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 36px;
+            color: #333;
+        }
+
+        /* Testimonials Section */
+        .testimonials {
+            padding: 80px 0;
+            background-color: #fff;
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .testimonial-card {
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        .social-links a {
+            color: white;
+            margin: 0 10px;
+            text-decoration: none;
+        }
+    </style>
 </head>
 <body>
     <header>
-        <div class="overlay">
-            <div class="container">
-                <h1>Babylon Soft</h1>
-                <p>Решения для автоматизации и управления малым бизнесом</p>
+        <nav>
+            <div class="logo">AutoMate Pro</div>
+            <div class="nav-links">
+                <a href="#home">Home</a>
+                <a href="#features">Features</a>
+                <a href="#pricing">Pricing</a>
+                <a href="#contact">Contact</a>
             </div>
-        </div>
+            <div class="contact-info">
+                <a href="tel:+1234567890">Call Us: (123) 456-7890</a>
+                <a href="mailto:support@automatepro.com">Email Us: support@automatepro.com</a>
+            </div>
+        </nav>
     </header>
-    
-    <main>
-        <section id="about" class="about">
-            <div class="container">
-                <h2>О компании</h2>
-                <div class="about-content">
-                    <p>
-                        Babylon Soft занимается разработкой инновационного программного обеспечения, 
-                        которое помогает предпринимателям эффективно управлять своим бизнесом. 
-                        Наши программы известны надежностью, простотой использования и адаптируемостью к любым требованиям.
-                    </p>
-                </div>
-            </div>
-        </section>
 
-        <section class="programs">
-            <h2>Наши программы</h2>
-            
-            <!-- Storage -->
-            <div class="card">
-                <img src="storage.png" alt="Storage">
-                <h3>Storage</h3>
-                <p>
-                    Программа для учета на складе, автоматизации производства и управления заказами. 
-                    Простая в использовании, но мощная для бизнеса.
-                </p>
-            </div>
+    <section class="hero">
+        <h1>Transform Your Small Business with AutoMate Pro</h1>
+        <p>Automate your workflows, save time and reduce costs with our comprehensive suite of tools for small businesses.</p>
+        <button class="cta-button">Get Started Today</button>
+    </section>
 
-            <!-- StorageUA -->
-            <div class="card">
-                <img src="storageua.png" alt="StorageUA">
-                <h3>StorageUA</h3>
-                <p>
-                    Программа для учета на складе, автоматизации производства и управления заказами. 
-                    Простая в использовании, но мощная для бизнеса.
-                </p>
+    <section class="categories">
+        <h2>Categories of Software Tools</h2>
+        <div class="category-grid">
+            <div class="category-card">
+                <h3>Scheduling & Time Management</h3>
+                <p>Manage your team's schedule, track time off, and automate workflows for seamless operations.</p>
             </div>
-
-            <!-- Prices -->
-            <div class="card">
-                <img src="prices.png" alt="Prices">
-                <h3>Prices</h3>
-                <p>
-                    Помощь в формировании заказов на закупку по прайс-листам поставщиков. 
-                    Автоматизация выбора оптимальных цен.
-                </p>
+            <div class="category-card">
+                <h3>Financial Accounting</h3>
+                <p>Easy bookkeeping, invoicing, and financial reporting to keep your business finances in order.</p>
             </div>
-
-            <!-- Huckster -->
-            <div class="card">
-                <img src="huckster.png" alt="Huckster">
-                <h3>Huckster</h3>
-                <p>
-                    Программа для управления товарным учетом, инвентаризацией и заказами в розничной и оптовой торговле. 
-                </p>
-            </div>
-
-        </section>
-    </main>
-    
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <p>&copy; 2024 Babylon Soft. Все права защищены.</p>
-                <p>Email: <a href="mailto:support@bsoft.net.ua">support@bsoft.net.ua</a></p>
+            <div class="category-card">
+                <h3>Customer Relations</h3>
+                <p>Automated CRM system for managing customer interactions and improving client relationships.</p>
             </div>
         </div>
-    </footer>
+    </section>
+
+    <!-- Add more sections as needed -->
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Modal popup
+        const modal = document.createElement('div');
+        modal.className = 'modal';
+        modal.innerHTML = `
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>Welcome to AutoMate Pro</h2>
+                <p>Join thousands of satisfied small business owners who have transformed their operations with our software solutions.</p>
+                <button class="start-button">Start Free Trial</button>
+            </div>
+        `;
+
+        document.body.appendChild(modal);
+
+        // Close modal
+        const close = document.querySelector('.close');
+        if (close) {
+            close.addEventListener('click', () => {
+                modal.style.display = 'none';
+            });
+        }
+
+        // Show modal
+        const trigger = document.querySelector('.trigger-modal');
+        if (trigger) {
+            trigger.addEventListener('click', () => {
+                modal.style.display = 'block';
+            });
+        }
+    </script>
 </body>
 </html>
