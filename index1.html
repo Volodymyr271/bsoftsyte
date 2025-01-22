@@ -1,254 +1,166 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="uk">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BizAuto — Программы для автоматизации бизнеса</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <title>BabylonSoft - Программи для малого бізнесу</title>
     <style>
-        :root {
-            --primary: #2563eb;
-            --primary-hover: #1d4ed8;
-            --dark: #1f2937;
-            --light: #f9fafb;
-        }
-
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Inter', sans-serif;
+            font-family: 'Arial', sans-serif;
         }
 
         body {
-            line-height: 1.6;
-            color: var(--dark);
+            background-color: #f5f6fa;
+        }
+
+        header {
+            background: #2c3e50;
+            color: white;
+            padding: 1rem;
+            text-align: center;
         }
 
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 1rem;
-        }
-
-        /* Header */
-        .header {
-            background: var(--light);
-            padding: 1rem 0;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
-
-        .nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--primary);
-        }
-
-        /* Hero Section */
-        .hero {
-            padding: 6rem 0;
-            text-align: center;
-            background: linear-gradient(45deg, #eff6ff, #ffffff);
-        }
-
-        .hero h1 {
-            font-size: 3rem;
-            margin-bottom: 1.5rem;
-            line-height: 1.2;
-        }
-
-        /* Features Grid */
-        .features {
-            padding: 4rem 0;
-            background: var(--light);
-        }
-
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .feature-card {
             padding: 2rem;
-            border-radius: 12px;
-            background: white;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-            transition: transform 0.3s ease;
         }
 
-        .feature-card:hover {
-            transform: translateY(-5px);
-        }
-
-        /* Products Section */
         .products {
-            padding: 4rem 0;
-        }
-
-        .products-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 2rem;
-            margin-top: 3rem;
+            margin-top: 2rem;
         }
 
         .product-card {
-            border: 1px solid #e5e7eb;
-            border-radius: 12px;
-            overflow: hidden;
-            transition: box-shadow 0.3s ease;
+            background: white;
+            border-radius: 10px;
+            padding: 1.5rem;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
         }
 
         .product-card:hover {
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transform: translateY(-5px);
         }
 
-        .product-image {
-            height: 200px;
-            background: #e5e7eb;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+        .product-title {
+            color: #2c3e50;
+            margin-bottom: 1rem;
         }
 
-        /* Pricing Section */
-        .pricing {
-            padding: 4rem 0;
-            background: var(--light);
+        .product-description {
+            color: #666;
+            margin-bottom: 1rem;
+            min-height: 60px;
         }
 
-        .pricing-cards {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
+        .price {
+            color: #27ae60;
+            font-size: 1.5rem;
+            margin: 1rem 0;
         }
 
-        .price-card {
-            background: white;
-            padding: 2rem;
-            border-radius: 12px;
-            text-align: center;
-        }
-
-        .price-card.popular {
-            border: 2px solid var(--primary);
-        }
-
-        .btn {
-            display: inline-block;
-            padding: 0.75rem 1.5rem;
-            background: var(--primary);
+        .download-btn {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background: #2980b9;
             color: white;
-            border-radius: 8px;
+            text-align: center;
             text-decoration: none;
-            font-weight: 500;
-            transition: background 0.3s ease;
+            border-radius: 5px;
+            transition: background 0.3s;
         }
 
-        .btn:hover {
-            background: var(--primary-hover);
+        .download-btn:hover {
+            background: #3498db;
+        }
+
+        .contact-section {
+            text-align: center;
+            margin: 4rem 0;
+            padding: 2rem;
+            background: #2c3e50;
+            color: white;
+            border-radius: 10px;
+        }
+
+        footer {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            margin-top: 2rem;
         }
 
         @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2rem;
+            .products {
+                grid-template-columns: 1fr;
             }
         }
     </style>
 </head>
 <body>
-    <header class="header">
-        <nav class="nav container">
-            <div class="logo">BizAuto</div>
-            <div class="nav-links">
-                <a href="#features" class="btn">Возможности</a>
-                <a href="#products" class="btn">Программы</a>
-            </div>
-        </nav>
+    <header>
+        <h1>BabylonSoft</h1>
+        <p>Програмне забезпечення для вашого бізнесу</p>
     </header>
 
-    <section class="hero">
-        <div class="container">
-            <h1>Автоматизируйте ваш бизнес с нашими решениями</h1>
-            <p class="subtitle">Набор профессиональных инструментов для управления и масштабирования бизнеса</p>
-            <div class="cta-buttons" style="margin-top: 2rem;">
-                <a href="#products" class="btn">Выбрать программу</a>
+    <div class="container">
+        <div class="products">
+            <div class="product-card">
+                <h2 class="product-title">Бухгалтерія PRO</h2>
+                <p class="product-description">Повний комплекс бухгалтерського обліку для малого бізнесу</p>
+                <div class="price">1499 грн / $40</div>
+                <a href="#" class="download-btn">Завантажити</a>
             </div>
-        </div>
-    </section>
 
-    <section id="features" class="features">
-        <div class="container">
-            <h2 style="text-align: center;">Ключевые возможности</h2>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <h3>Автоматизация отчетности</h3>
-                    <p>Генерация финансовых и аналитических отчетов в один клик</p>
-                </div>
-                <div class="feature-card">
-                    <h3>Управление задачами</h3>
-                    <p>Система постановки и контроля задач для сотрудников</p>
-                </div>
-                <div class="feature-card">
-                    <h3>Интеграции</h3>
-                    <p>Подключение популярных сервисов и банковских эквайрингов</p>
-                </div>
+            <div class="product-card">
+                <h2 class="product-title">Торгівля+</h2>
+                <p class="product-description">Управління продажами та складським обліком</p>
+                <div class="price">1999 грн / $55</div>
+                <a href="#" class="download-btn">Завантажити</a>
             </div>
-        </div>
-    </section>
 
-    <section id="products" class="products">
-        <div class="container">
-            <h2 style="text-align: center;">Наши программы</h2>
-            <div class="products-grid">
-                <div class="product-card">
-                    <div class="product-image">
-                        <!-- Добавить изображение -->
-                    </div>
-                    <div style="padding: 1.5rem;">
-                        <h3>Retail Pro</h3>
-                        <p>Автоматизация розничной торговли</p>
-                        <div style="margin-top: 1rem;">
-                            <a href="#" class="btn">Подробнее</a>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="product-card">
-                    <div class="product-image">
-                        <!-- Добавить изображение -->
-                    </div>
-                    <div style="padding: 1.5rem;">
-                        <h3>Service Master</h3>
-                        <p>Управление сервисным центром</p>
-                        <div style="margin-top: 1rem;">
-                            <a href="#" class="btn">Подробнее</a>
-                        </div>
-                    </div>
-                </div>
+            <div class="product-card">
+                <h2 class="product-title">Кадри+</h2>
+                <p class="product-description">Кадровий облік та управління персоналом</p>
+                <div class="price">1299 грн / $35</div>
+                <a href="#" class="download-btn">Завантажити</a>
+            </div>
+
+            <div class="product-card">
+                <h2 class="product-title">Роздріб</h2>
+                <p class="product-description">POS-система для роздрібної торгівлі</p>
+                <div class="price">2499 грн / $68</div>
+                <a href="#" class="download-btn">Завантажити</a>
             </div>
         </div>
-    </section>
+
+        <div class="contact-section">
+            <h2>Зв'яжіться з нами</h2>
+            <p>Пишіть на електронну адресу:</p>
+            <a href="mailto:support@bsoft.net.ua" style="color: #3498db; text-decoration: none;">support@bsoft.net.ua</a>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2023 BabylonSoft. Всі права захищені</p>
+        <p>bsoft.net.ua</p>
+    </footer>
 
     <script>
-        // Добавьте здесь JavaScript для интерактивности
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
+        document.querySelectorAll('.download-btn').forEach(button => {
+            button.addEventListener('click', function(e) {
                 e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
+                if(confirm('Після завантаження програми слідкуйте за інструкціями для встановлення. Продовжити?')) {
+                    window.location.href = '#'; // Замініть на реальну URL-адресу завантаження
+                }
             });
         });
     </script>
