@@ -1,53 +1,204 @@
 <!DOCTYPE html>
-<html>
+<html lang="ua">
 <head>
-    <title>Редактируемый Grid</title>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BabylonSoft - Программы для автоматизации малого бизнеса</title>
     <style>
-        table { border-collapse: collapse; }
-        th, td { border: 1px solid black; padding: 5px; }
-        input[type=text] { width: 100%; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f5f5f5;
+        }
+
+        header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        .hero {
+            background-color: #34495e;
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .products {
+            padding: 4rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .product-card {
+            background-color: white;
+            border-radius: 8px;
+            padding: 1rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .price {
+            color: #e74c3c;
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin: 1rem 0;
+        }
+
+        .download-btn {
+            background-color: #27ae60;
+            color: white;
+            padding: 0.8rem 2rem;
+            border-radius: 4px;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 1rem;
+        }
+
+        .contact {
+            background-color: #f9f9f9;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .form {
+            max-width: 500px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        input[type="email"], input[type="text"] {
+            width: 100%;
+            padding: 0.5rem;
+            margin-bottom: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        button {
+            background-color: #27ae60;
+            color: white;
+            padding: 0.5rem 2rem;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                padding: 2rem;
+            }
+            
+            .products {
+                padding: 2rem;
+            }
+        }
     </style>
 </head>
 <body>
+    <header>
+        <h1>BabylonSoft</h1>
+        <p>Программы для автоматизации малого бизнеса</p>
+    </header>
 
-<table id="myGrid">
-    <tr>
-        <th>Имя</th>
-        <th>Возраст</th>
-        <th>Адрес</th>
-    </tr>
-    <tr>
-        <td><input type="text" value="John"></td>
-        <td><input type="text" value="30"></td>
-        <td><input type="text" value="New York"></td>
-    </tr>
-    <tr>
-        <td><input type="text" value="Jane"></td>
-        <td><input type="text" value="25"></td>
-        <td><input type="text" value="Los Angeles"></td>
-    </tr>
-</table>
+    <section class="hero">
+        <h2>Получите больше времени на управление своим бизнесом</h2>
+        <p>Наши программы помогут автоматизировать ключевые процессы и повысить эффективность работы вашего малого бизнеса.</p>
+        <div class="download-btn">Перейти к покупке</div>
+    </section>
 
-<script>
-$(document).ready(function() {
-    // Назначение события двойного клика для редактирования ячеек
-    $('#myGrid td').on('dblclick', function() {
-        var input = '<input type="text" value="' + $(this).text() + '">';
-        $(this).html(input);
-        $('input', this).focus();
+    <section class="products">
+        <h2>Наше предложение</h2>
+        <div class="product-card">
+            <h3>BasicPack</h3>
+            <p>Базовая версия для начинающих</p>
+            <div class="price">99 грн / 12.99 $</div>
+            <button class="download-btn">Загрузить</button>
+        </div>
 
-        // Обработка нажатия клавиши Enter или нажатия кнопки "Готово"
-        $('input', this).on('keyup', function(e) {
-            if (e.keyCode == 13 || e.target.value === '') {
-                var newValue = $(this).val();
-                $(this).parent().text(newValue);
-            }
+        <div class="product-card">
+            <h3>ProfessionalPack</h3>
+            <p>Полноценная версия для средних бизнесов</p>
+            <div class="price">199 грн / 24.99 $</div>
+            <button class="download-btn">Загрузить</button>
+        </div>
+
+        <div class="product-card">
+            <h3>EnterprisePack</h3>
+            <p>Для крупных организаций с сложными процессами</p>
+            <div class="price">299 грн / 49.99 $</div>
+            <button class="download-btn">Загрузить</button>
+        </div>
+
+        <div class="product-card">
+            <h3>UltimatePack</h3>
+            <p>Всё включено с дополнительными функциями</p>
+            <div class="price">399 грн / 74.99 $</div>
+            <button class="download-btn">Загрузить</button>
+        </div>
+    </section>
+
+    <section class="prices">
+        <h2>Цены</h2>
+        <table>
+            <tr>
+                <th>Название</th>
+                <th>Гривень</th>
+                <th>Dоллары</th>
+            </tr>
+            <tr>
+                <td>BasicPack</td>
+                <td>99</td>
+                <td>12.99</td>
+            </tr>
+            <tr>
+                <td>ProfessionalPack</td>
+                <td>199</td>
+                <td>24.99</td>
+            </tr>
+            <tr>
+                <td>EnterprisePack</td>
+                <td>299</td>
+                <td>49.99</td>
+            </tr>
+            <tr>
+                <td>UltimatePack</td>
+                <td>399</td>
+                <td>74.99</td>
+            </tr>
+        </table>
+    </section>
+
+    <section class="contact">
+        <h2>Контактная информация</h2>
+        <p>Email: support@bsoft.net.ua</p>
+        <p>Телефон: +123 456 7890</p>
+        <p>Адрес: ул. Простая, 42</p>
+    </section>
+
+    <section class="form">
+        <h2>Отправить заявку</h2>
+        <form>
+            <input type="email" placeholder="Электронная почта" required>
+            <textarea rows="4" placeholder="Ваше сообщение"></textarea>
+            <button type="submit">发送</button>
+        </form>
+    </section>
+
+    <script>
+        document.querySelector('form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Спасибо за заявку. Мы скоро свяжемся с вами!');
         });
-    });
-});
-</script>
-
+    </script>
 </body>
 </html>
