@@ -1,203 +1,256 @@
 <!DOCTYPE html>
-<html lang="ua">
+<html lang="uk">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BabylonSoft - Программы для автоматизации малого бизнеса</title>
+    <title>BabylonSoft - Business Automation Solutions</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: Arial, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
         body {
             background-color: #f5f5f5;
         }
 
-        header {
-            background-color: #2c3e50;
-            color: white;
-            padding: 1rem;
-            text-align: center;
-        }
-
-        .hero {
-            background-color: #34495e;
-            color: white;
-            padding: 4rem 2rem;
-            text-align: center;
-        }
-
-        .products {
-            padding: 4rem 2rem;
+        .container {
             max-width: 1200px;
             margin: 0 auto;
+            padding: 20px;
         }
 
-        .product-card {
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+
+        nav a {
+            margin-left: 30px;
+            text-decoration: none;
+            color: #2c3e50;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #3498db;
+        }
+
+        .pricing-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 50px;
+        }
+
+        .price-card {
             background-color: white;
-            border-radius: 8px;
-            padding: 1rem;
-            margin-bottom: 2rem;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            transition: transform 0.3s ease;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .price-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .price-header {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #2c3e50;
         }
 
         .price {
-            color: #e74c3c;
-            font-size: 1.5rem;
+            font-size: 48px;
             font-weight: bold;
-            margin: 1rem 0;
+            margin: 20px 0;
+            color: #3498db;
+        }
+
+        .features {
+            list-style: none;
+            margin-bottom: 30px;
+        }
+
+        .features li {
+            margin-bottom: 15px;
+            color: #7f8c8d;
         }
 
         .download-btn {
-            background-color: #27ae60;
+            background-color: #3498db;
             color: white;
-            padding: 0.8rem 2rem;
-            border-radius: 4px;
+            padding: 12px 30px;
+            border-radius: 5px;
             text-decoration: none;
             display: inline-block;
-            margin-top: 1rem;
+            transition: background-color 0.3s ease;
         }
 
-        .contact {
-            background-color: #f9f9f9;
-            padding: 2rem;
-            text-align: center;
+        .download-btn:hover {
+            background-color: #2980b9;
         }
 
-        .form {
-            max-width: 500px;
-            margin: 0 auto;
+        .contact-section {
             background-color: white;
-            padding: 2rem;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            padding: 40px;
+            margin-top: 50px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
 
-        input[type="email"], input[type="text"] {
-            width: 100%;
-            padding: 0.5rem;
-            margin-bottom: 1rem;
+        h2 {
+            font-size: 36px;
+            margin-bottom: 40px;
+            color: #2c3e50;
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        input, textarea {
+            margin-bottom: 20px;
+            padding: 10px;
             border: 1px solid #ddd;
-            border-radius: 4px;
+            border-radius: 5px;
+            font-size: 16px;
         }
 
         button {
-            background-color: #27ae60;
+            background-color: #3498db;
             color: white;
-            padding: 0.5rem 2rem;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
+            padding: 12px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #2980b9;
+        }
+
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            padding: 20px;
+            text-align: center;
         }
 
         @media (max-width: 768px) {
-            .hero {
-                padding: 2rem;
+            .pricing-section {
+                grid-template-columns: 1fr;
             }
             
-            .products {
-                padding: 2rem;
+            .price-card {
+                margin-bottom: 30px;
             }
         }
     </style>
 </head>
 <body>
-    <header>
-        <h1>BabylonSoft</h1>
-        <p>Программы для автоматизации малого бизнеса</p>
-    </header>
+    <div class="container">
+        <header>
+            <div class="logo">BabylonSoft</div>
+            <nav>
+                <a href="#products">Products</a>
+                <a href="#pricing">Pricing</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </header>
 
-    <section class="hero">
-        <h2>Получите больше времени на управление своим бизнесом</h2>
-        <p>Наши программы помогут автоматизировать ключевые процессы и повысить эффективность работы вашего малого бизнеса.</p>
-        <div class="download-btn">Перейти к покупке</div>
-    </section>
+        <section class="pricing-section">
+            <div class="price-card">
+                <h2>Business Suite Pro</h2>
+                <p class="price">$99 / €749</p>
+                <ul class="features">
+                    <li>Complete business automation</li>
+                    <li>Advanced CRM system</li>
+                    <li>Financial reporting tools</li>
+                    <li>Team management features</li>
+                </ul>
+                <a href="#" class="download-btn">Download Now</a>
+            </div>
 
-    <section class="products">
-        <h2>Наше предложение</h2>
-        <div class="product-card">
-            <h3>BasicPack</h3>
-            <p>Базовая версия для начинающих</p>
-            <div class="price">99 грн / 12.99 $</div>
-            <button class="download-btn">Загрузить</button>
-        </div>
+            <div class="price-card">
+                <h2>AutoTask Plus</h2>
+                <p class="price">$79 / €604</p>
+                <ul class="features">
+                    <li>Advanced task automation</li>
+                    <li>Scheduler and planner</li>
+                    <li>Team collaboration tools</li>
+                    <li>Customizable workflows</li>
+                </ul>
+                <a href="#" class="download-btn">Download Now</a>
+            </div>
 
-        <div class="product-card">
-            <h3>ProfessionalPack</h3>
-            <p>Полноценная версия для средних бизнесов</p>
-            <div class="price">199 грн / 24.99 $</div>
-            <button class="download-btn">Загрузить</button>
-        </div>
+            <div class="price-card">
+                <h2>QuickBooks Pro</h2>
+                <p class="price">$149 / €1167</p>
+                <ul class="features">
+                    <li>Financial management</li>
+                    <li>Invoicing system</li>
+                    <li>Accounting tools</li>
+                    <li>Budgeting features</li>
+                </ul>
+                <a href="#" class="download-btn">Download Now</a>
+            </div>
 
-        <div class="product-card">
-            <h3>EnterprisePack</h3>
-            <p>Для крупных организаций с сложными процессами</p>
-            <div class="price">299 грн / 49.99 $</div>
-            <button class="download-btn">Загрузить</button>
-        </div>
+            <div class="price-card">
+                <h2>TeamManager Ultimate</h2>
+                <p class="price">$199 / €1548</p>
+                <ul class="features">
+                    <li>Advanced team management</li>
+                    <li>Premium reporting tools</li>
+                    <li>Customizable dashboards</li>
+                    <li>Comprehensive analytics</li>
+                </ul>
+                <a href="#" class="download-btn">Download Now</a>
+            </div>
+        </section>
 
-        <div class="product-card">
-            <h3>UltimatePack</h3>
-            <p>Всё включено с дополнительными функциями</p>
-            <div class="price">399 грн / 74.99 $</div>
-            <button class="download-btn">Загрузить</button>
-        </div>
-    </section>
+        <section class="contact-section">
+            <h2>Contact Us</h2>
+            <form class="contact-form" action="">
+                <input type="text" placeholder="Name" required>
+                <input type="email" placeholder="Email" required>
+                <textarea rows="5" placeholder="Message" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </section>
 
-    <section class="prices">
-        <h2>Цены</h2>
-        <table>
-            <tr>
-                <th>Название</th>
-                <th>Гривень</th>
-                <th>Dоллары</th>
-            </tr>
-            <tr>
-                <td>BasicPack</td>
-                <td>99</td>
-                <td>12.99</td>
-            </tr>
-            <tr>
-                <td>ProfessionalPack</td>
-                <td>199</td>
-                <td>24.99</td>
-            </tr>
-            <tr>
-                <td>EnterprisePack</td>
-                <td>299</td>
-                <td>49.99</td>
-            </tr>
-            <tr>
-                <td>UltimatePack</td>
-                <td>399</td>
-                <td>74.99</td>
-            </tr>
-        </table>
-    </section>
-
-    <section class="contact">
-        <h2>Контактная информация</h2>
-        <p>Email: support@bsoft.net.ua</p>
-        <p>Телефон: +123 456 7890</p>
-        <p>Адрес: ул. Простая, 42</p>
-    </section>
-
-    <section class="form">
-        <h2>Отправить заявку</h2>
-        <form>
-            <input type="email" placeholder="Электронная почта" required>
-            <textarea rows="4" placeholder="Ваше сообщение"></textarea>
-            <button type="submit">发送</button>
-        </form>
-    </section>
+        <footer>
+            <p>&copy; 2024 BabylonSoft. All rights reserved.</p>
+        </footer>
+    </div>
 
     <script>
-        document.querySelector('form').addEventListener('submit', function(e) {
+        document.querySelectorAll('.download-btn').forEach(button => {
+            button.addEventListener('click', function() {
+                alert('Thank you for your interest! We will send the download link to your email.');
+            });
+        });
+
+        document.querySelector('.contact-form').addEventListener('submit', function(e) {
             e.preventDefault();
-            alert('Спасибо за заявку. Мы скоро свяжемся с вами!');
+            alert('Thank you for your message! We will contact you soon.');
+            this.reset();
         });
     </script>
 </body>
