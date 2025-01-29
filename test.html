@@ -137,6 +137,13 @@
             }
             updateDisplay();
         }
+
+        // Добавляем функционал для '+' 
+        document.querySelectorAll('.buttons button').forEach(button => {
+            if (button.textContent === '+') {
+                button.onclick = () => appendToDisplay('+');
+            }
+        });
     </script>
 </body>
 </html>
