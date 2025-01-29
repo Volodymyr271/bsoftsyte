@@ -1,257 +1,142 @@
 <!DOCTYPE html>
-<html lang="uk">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BabylonSoft - Business Automation Solutions</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title>Калькулятор</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-
         body {
-            background-color: #f5f5f5;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-
-        header {
             display: flex;
-            justify-content: space-between;
+            justify-content: center;
             align-items: center;
-            padding: 20px 0;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
         }
 
-        .logo {
-            font-size: 24px;
-            font-weight: bold;
-            color: #2c3e50;
-        }
-
-        nav a {
-            margin-left: 30px;
-            text-decoration: none;
-            color: #2c3e50;
-            transition: color 0.3s ease;
-        }
-
-        nav a:hover {
-            color: #3498db;
-        }
-
-        .pricing-section {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-            margin-top: 50px;
-        }
-
-        .price-card {
-            background-color: white;
-            padding: 30px;
+        .calculator {
+            background-color: #fff;
+            padding: 20px;
             border-radius: 10px;
-            text-align: center;
-            transition: transform 0.3s ease;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+            width: 320px;
         }
 
-        .price-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .price-header {
-            font-size: 24px;
-            margin-bottom: 20px;
-            color: #2c3e50;
-        }
-
-        .price {
-            font-size: 48px;
-            font-weight: bold;
-            margin: 20px 0;
-            color: #3498db;
-        }
-
-        .features {
-            list-style: none;
-            margin-bottom: 30px;
-        }
-
-        .features li {
-            margin-bottom: 15px;
-            color: #7f8c8d;
-        }
-
-        .download-btn {
-            background-color: #3498db;
-            color: white;
-            padding: 12px 30px;
-            border-radius: 5px;
-            text-decoration: none;
-            display: inline-block;
-            transition: background-color 0.3s ease;
-        }
-
-        .download-btn:hover {
-            background-color: #2980b9;
-        }
-
-        .contact-section {
-            background-color: white;
-            padding: 40px;
-            margin-top: 50px;
-            border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-
-        h2 {
-            font-size: 36px;
-            margin-bottom: 40px;
-            color: #2c3e50;
-        }
-
-        .contact-form {
-            display: flex;
-            flex-direction: column;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        input, textarea {
-            margin-bottom: 20px;
+        .display {
+            text-align: right;
+            font-size: 2em;
+            margin-bottom: 10px;
             padding: 10px;
-            border: 1px solid #ddd;
+            background-color: #f8f8f8;
             border-radius: 5px;
-            font-size: 16px;
+        }
+
+        .buttons {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 5px;
         }
 
         button {
-            background-color: #3498db;
-            color: white;
-            padding: 12px 30px;
+            padding: 20px;
+            font-size: 1.2em;
+            border: none;
             border-radius: 5px;
-            text-decoration: none;
-            transition: background-color 0.3s ease;
+            cursor: pointer;
+            background-color: #f8f8f8;
+            color: #333;
         }
 
         button:hover {
-            background-color: #2980b9;
+            background-color: #e0e0e0;
         }
 
-        footer {
-            background-color: #2c3e50;
+        .operator {
+            background-color: #ff9500;
             color: white;
-            padding: 20px;
-            text-align: center;
         }
 
-        @media (max-width: 768px) {
-            .pricing-section {
-                grid-template-columns: 1fr;
-            }
-            
-            .price-card {
-                margin-bottom: 30px;
-            }
+        .operator:hover {
+            background-color: #db8100;
+        }
+
+        .span-top {
+            grid-column: span 4;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <div class="logo">BabylonSoft</div>
-            <nav>
-                <a href="#products">Products</a>
-                <a href="#pricing">Pricing</a>
-                <a href="#contact">Contact</a>
-            </nav>
-        </header>
-
-        <section class="pricing-section">
-            <div class="price-card">
-                <h2>Business Suite Pro</h2>
-                <p class="price">$99 / €749</p>
-                <ul class="features">
-                    <li>Complete business automation</li>
-                    <li>Advanced CRM system</li>
-                    <li>Financial reporting tools</li>
-                    <li>Team management features</li>
-                </ul>
-                <a href="#" class="download-btn">Download Now</a>
-            </div>
-
-            <div class="price-card">
-                <h2>AutoTask Plus</h2>
-                <p class="price">$79 / €604</p>
-                <ul class="features">
-                    <li>Advanced task automation</li>
-                    <li>Scheduler and planner</li>
-                    <li>Team collaboration tools</li>
-                    <li>Customizable workflows</li>
-                </ul>
-                <a href="#" class="download-btn">Download Now</a>
-            </div>
-
-            <div class="price-card">
-                <h2>QuickBooks Pro</h2>
-                <p class="price">$149 / €1167</p>
-                <ul class="features">
-                    <li>Financial management</li>
-                    <li>Invoicing system</li>
-                    <li>Accounting tools</li>
-                    <li>Budgeting features</li>
-                </ul>
-                <a href="#" class="download-btn">Download Now</a>
-            </div>
-
-            <div class="price-card">
-                <h2>TeamManager Ultimate</h2>
-                <p class="price">$199 / €1548</p>
-                <ul class="features">
-                    <li>Advanced team management</li>
-                    <li>Premium reporting tools</li>
-                    <li>Customizable dashboards</li>
-                    <li>Comprehensive analytics</li>
-                </ul>
-                <a href="#" class="download-btn">Download Now</a>
-            </div>
-        </section>
-
-        <section class="contact-section">
-            <h2>Contact Us</h2>
-            <form class="contact-form" action="">
-                <input type="text" placeholder="Name" required>
-                <input type="email" placeholder="Email" required>
-                <textarea rows="5" placeholder="Message" required></textarea>
-                <button type="submit">Send Message</button>
-            </form>
-        </section>
-
-        <footer>
-            <p>&copy; 2024 BabylonSoft. All rights reserved.</p>
-        </footer>
+    <div class="calculator">
+        <div class="display">0</div>
+        <div class="buttons">
+            <button class="operator" onclick="clearDisplay()">AC</button>
+            <button class="operator" onclick="deleteLastChar()">DEL</button>
+            <button class="operator" onclick="appendToDisplay('.')">.</button>
+            <button class="operator" onclick="calculate()">=</button>
+            
+            <button onclick="appendToDisplay('7')">7</button>
+            <button onclick="appendToDisplay('8')">8</button>
+            <button onclick="appendToDisplay('9')">9</button>
+            <button class="operator" onclick="appendToDisplay('/')">/</button>
+            
+            <button onclick="appendToDisplay('4')">4</button>
+            <button onclick="appendToDisplay('5')">5</button>
+            <button onclick="appendToDisplay('6')">6</button>
+            <button class="operator" onclick="appendToDisplay('*')">×</button>
+            
+            <button onclick="appendToDisplay('1')">1</button>
+            <button onclick="appendToDisplay('2')">2</button>
+            <button onclick="appendToDisplay('3')">3</button>
+            <button class="operator" onclick="appendToDisplay('-')">-</button>
+            
+            <button onclick="appendToDisplay('0')">0</button>
+            <button class="span-top operator" onclick="calculate()">⇒</button>
+        </div>
     </div>
 
     <script>
-        document.querySelectorAll('.download-btn').forEach(button => {
-            button.addEventListener('click', function() {
-                alert('Thank you for your interest! We will send the download link to your email.');
-            });
-        });
+        let display = document.querySelector('.display');
+        let currentCalculation = '0';
+        
+        function updateDisplay() {
+            display.textContent = currentCalculation;
+        }
 
-        document.querySelector('.contact-form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('Thank you for your message! We will contact you soon.');
-            this.reset();
-        });
+        function appendToDisplay(char) {
+            if (currentCalculation === '0' && char !== '.') {
+                currentCalculation = char;
+            } else {
+                currentCalculation += char;
+            }
+            updateDisplay();
+        }
+
+        function clearDisplay() {
+            currentCalculation = '0';
+            updateDisplay();
+        }
+
+        function deleteLastChar() {
+            if (currentCalculation.length > 1) {
+                currentCalculation = currentCalculation.slice(0, -1);
+            } else {
+                currentCalculation = '0';
+            }
+            updateDisplay();
+        }
+
+        function calculate() {
+            try {
+                currentCalculation = eval(currentCalculation).toString();
+            } catch (error) {
+                if (error.message.includes('divided by zero')) {
+                    currentCalculation = 'Error: Division by zero';
+                } else {
+                    currentCalculation = 'Error';
+                }
+            }
+            updateDisplay();
+        }
     </script>
 </body>
 </html>
