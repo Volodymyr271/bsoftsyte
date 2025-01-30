@@ -2,146 +2,93 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>Калькулятор</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Таблица</title>
     <style>
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            margin: 0;
-            background: #f0f2f5;
-            font-family: Arial, sans-serif;
-        }
-
-        .calculator {
-            background: #fff;
-            padding: 20px;
-            border-radius: 12px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            width: 320px;
-        }
-
-        #display {
+        table {
             width: 100%;
-            height: 60px;
-            margin-bottom: 20px;
-            padding: 10px;
-            font-size: 24px;
-            text-align: right;
-            border: 2px solid #ddd;
-            border-radius: 6px;
-            outline: none;
+            border-collapse: collapse;
         }
-
-        .buttons {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 10px;
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: center;
         }
-
-        button {
-            padding: 15px;
-            font-size: 18px;
-            border: none;
-            border-radius: 6px;
-            cursor: pointer;
-            transition: all 0.2s;
+        th {
+            background-color: #f2f2f2;
         }
-
-        button:hover {
-            filter: brightness(90%);
-        }
-
-        .number {
-            background: #f8f9fa;
-            color: #333;
-        }
-
-        .operator {
-            background: #4dabf7;
-            color: white;
-        }
-
-        .equal {
-            background: #40c057;
-            color: white;
-            grid-column: span 2;
-        }
-
-        .clear {
-            background: #ff6b6b;
-            color: white;
+        input {
+            width: 100%;
+            padding: 5px;
+            box-sizing: border-box;
         }
     </style>
 </head>
 <body>
-    <div class="calculator">
-        <input type="text" id="display" readonly>
-        <div class="buttons">
-            <button class="clear" onclick="clearDisplay()">C</button>
-            <button class="operator" onclick="appendToDisplay('/')">/</button>
-            <button class="operator" onclick="appendToDisplay('*')">×</button>
-            <button class="operator" onclick="backspace()">⌫</button>
-            
-            <button class="number" onclick="appendToDisplay('7')">7</button>
-            <button class="number" onclick="appendToDisplay('8')">8</button>
-            <button class="number" onclick="appendToDisplay('9')">9</button>
-            <button class="operator" onclick="appendToDisplay('-')">-</button>
-            
-            <button class="number" onclick="appendToDisplay('4')">4</button>
-            <button class="number" onclick="appendToDisplay('5')">5</button>
-            <button class="number" onclick="appendToDisplay('6')">6</button>
-            <button class="operator" onclick="appendToDisplay('+')">+</button>
-            
-            <button class="number" onclick="appendToDisplay('1')">1</button>
-            <button class="number" onclick="appendToDisplay('2')">2</button>
-            <button class="number" onclick="appendToDisplay('3')">3</button>
-            <button class="number" onclick="appendToDisplay('.')">.</button>
-            
-            <button class="number" onclick="appendToDisplay('0')">0</button>
-            <button class="number" onclick="appendToDisplay('00')">00</button>
-            <button class="equal" onclick="calculate()">=</button>
-        </div>
-    </div>
+    <table>
+        <thead>
+            <tr>
+                <th>Цена</th>
+                <th>Кол</th>
+                <th>Сумма</th>
+                <th>Цена 2</th>
+                <th>Сумма2</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><input type="number" class="price" oninput="calculate()"></td>
+                <td><input type="number" class="quantity" oninput="calculate()"></td>
+                <td class="sum"></td>
+                <td><input type="number" class="price2" oninput="calculate()"></td>
+                <td class="sum2"></td>
+            </tr>
+            <tr>
+                <td><input type="number" class="price" oninput="calculate()"></td>
+                <td><input type="number" class="quantity" oninput="calculate()"></td>
+                <td class="sum"></td>
+                <td><input type="number" class="price2" oninput="calculate()"></td>
+                <td class="sum2"></td>
+            </tr>
+            <tr>
+                <td><input type="number" class="price" oninput="calculate()"></td>
+                <td><input type="number" class="quantity" oninput="calculate()"></td>
+                <td class="sum"></td>
+                <td><input type="number" class="price2" oninput="calculate()"></td>
+                <td class="sum2"></td>
+            </tr>
+            <tr>
+                <td><input type="number" class="price" oninput="calculate()"></td>
+                <td><input type="number" class="quantity" oninput="calculate()"></td>
+                <td class="sum"></td>
+                <td><input type="number" class="price2" oninput="calculate()"></td>
+                <td class="sum2"></td>
+            </tr>
+            <tr>
+                <td><input type="number" class="price" oninput="calculate()"></td>
+                <td><input type="number" class="quantity" oninput="calculate()"></td>
+                <td class="sum"></td>
+                <td><input type="number" class="price2" oninput="calculate()"></td>
+                <td class="sum2"></td>
+            </tr>
+        </tbody>
+    </table>
 
     <script>
-        const display = document.getElementById('display');
-
-        function appendToDisplay(value) {
-            display.value += value;
-        }
-
-        function clearDisplay() {
-            display.value = '';
-        }
-
-        function backspace() {
-            display.value = display.value.slice(0, -1);
-        }
-
         function calculate() {
-            try {
-                display.value = eval(display.value.replace(/×/g, '*'));
-            } catch (error) {
-                display.value = 'Ошибка';
-                setTimeout(clearDisplay, 1000);
-            }
-        }
+            const rows = document.querySelectorAll('tbody tr');
+            rows.forEach(row => {
+                const price = parseFloat(row.querySelector('.price').value) || 0;
+                const quantity = parseFloat(row.querySelector('.quantity').value) || 0;
+                const price2 = parseFloat(row.querySelector('.price2').value) || 0;
 
-        // Обработка ввода с клавиатуры
-        document.addEventListener('keydown', (e) => {
-            if (e.key >= '0' && e.key <= '9' || e.key === '.' || e.key === '+' || 
-                e.key === '-' || e.key === '*' || e.key === '/') {
-                appendToDisplay(e.key);
-            } else if (e.key === 'Enter') {
-                calculate();
-            } else if (e.key === 'Backspace') {
-                backspace();
-            } else if (e.key === 'Escape') {
-                clearDisplay();
-            }
-        });
+                const sum = price * quantity;
+                const sum2 = quantity * price2;
+
+                row.querySelector('.sum').textContent = sum.toFixed(2);
+                row.querySelector('.sum2').textContent = sum2.toFixed(2);
+            });
+        }
     </script>
 </body>
 </html>
