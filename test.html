@@ -8,136 +8,140 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
+            min-height: 100vh;
             margin: 0;
-            background-color: #f0f0f0;
+            background: #f0f2f5;
             font-family: Arial, sans-serif;
         }
 
         .calculator {
-            background-color: #fff;
+            background: #fff;
             padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
             width: 320px;
         }
 
-        .display {
-            text-align: right;
-            font-size: 2em;
-            margin-bottom: 10px;
+        #display {
+            width: 100%;
+            height: 60px;
+            margin-bottom: 20px;
             padding: 10px;
-            background-color: #f8f8f8;
-            border-radius: 5px;
+            font-size: 24px;
+            text-align: right;
+            border: 2px solid #ddd;
+            border-radius: 6px;
+            outline: none;
         }
 
         .buttons {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            gap: 5px;
+            gap: 10px;
         }
 
         button {
-            padding: 20px;
-            font-size: 1.2em;
+            padding: 15px;
+            font-size: 18px;
             border: none;
-            border-radius: 5px;
+            border-radius: 6px;
             cursor: pointer;
-            background-color: #f8f8f8;
-            color: #333;
+            transition: all 0.2s;
         }
 
         button:hover {
-            background-color: #e0e0e0;
+            filter: brightness(90%);
+        }
+
+        .number {
+            background: #f8f9fa;
+            color: #333;
         }
 
         .operator {
-            background-color: #ff9500;
+            background: #4dabf7;
             color: white;
         }
 
-        .operator:hover {
-            background-color: #db8100;
+        .equal {
+            background: #40c057;
+            color: white;
+            grid-column: span 2;
         }
 
-        .span-top {
-            grid-column: span 4;
+        .clear {
+            background: #ff6b6b;
+            color: white;
         }
     </style>
 </head>
 <body>
     <div class="calculator">
-        <div class="display">0</div>
+        <input type="text" id="display" readonly>
         <div class="buttons">
-            <button class="operator" onclick="clearDisplay()">AC</button>
-            <button class="operator" onclick="deleteLastChar()">DEL</button>
-            <button class="operator" onclick="appendToDisplay('+')">+</button> <!-- Добавленная кнопка '+' -->
-            <button class="operator" onclick="appendToDisplay('.')">.</button>
-            <button class="operator" onclick="calculate()">=</button>
-
-            <button onclick="appendToDisplay('7')">7</button>
-            <button onclick="appendToDisplay('8')">8</button>
-            <button onclick="appendToDisplay('9')">9</button>
+            <button class="clear" onclick="clearDisplay()">C</button>
             <button class="operator" onclick="appendToDisplay('/')">/</button>
-
-            <button onclick="appendToDisplay('4')">4</button>
-            <button onclick="appendToDisplay('5')">5</button>
-            <button onclick="appendToDisplay('6')">6</button>
             <button class="operator" onclick="appendToDisplay('*')">×</button>
-
-            <button onclick="appendToDisplay('1')">1</button>
-            <button onclick="appendToDisplay('2')">2</button>
-            <button onclick="appendToDisplay('3')">3</button>
+            <button class="operator" onclick="backspace()">⌫</button>
+            
+            <button class="number" onclick="appendToDisplay('7')">7</button>
+            <button class="number" onclick="appendToDisplay('8')">8</button>
+            <button class="number" onclick="appendToDisplay('9')">9</button>
             <button class="operator" onclick="appendToDisplay('-')">-</button>
-
-            <button onclick="appendToDisplay('0')">0</button>
-            <button onclick="appendToDisplay('.')">.</button>
-            <button class="operator" onclick="calculate()">=</button>
+            
+            <button class="number" onclick="appendToDisplay('4')">4</button>
+            <button class="number" onclick="appendToDisplay('5')">5</button>
+            <button class="number" onclick="appendToDisplay('6')">6</button>
+            <button class="operator" onclick="appendToDisplay('+')">+</button>
+            
+            <button class="number" onclick="appendToDisplay('1')">1</button>
+            <button class="number" onclick="appendToDisplay('2')">2</button>
+            <button class="number" onclick="appendToDisplay('3')">3</button>
+            <button class="number" onclick="appendToDisplay('.')">.</button>
+            
+            <button class="number" onclick="appendToDisplay('0')">0</button>
+            <button class="number" onclick="appendToDisplay('00')">00</button>
+            <button class="equal" onclick="calculate()">=</button>
         </div>
     </div>
 
     <script>
-        let currentCalculation = '0';
+        const display = document.getElementById('display');
 
-        function updateDisplay() {
-            document.querySelector('.display').textContent = currentCalculation;
-        }
-
-        function appendToDisplay(char) {
-            if (currentCalculation === '0' && char !== '.') {
-                currentCalculation = char;
-            } else {
-                currentCalculation += char;
-            }
-            updateDisplay();
+        function appendToDisplay(value) {
+            display.value += value;
         }
 
         function clearDisplay() {
-            currentCalculation = '0';
-            updateDisplay();
+            display.value = '';
         }
 
-        function deleteLastChar() {
-            if (currentCalculation.length > 1) {
-                currentCalculation = currentCalculation.slice(0, -1);
-            } else {
-                currentCalculation = '0';
-            }
-            updateDisplay();
+        function backspace() {
+            display.value = display.value.slice(0, -1);
         }
 
         function calculate() {
             try {
-                currentCalculation = eval(currentCalculation).toString();
+                display.value = eval(display.value.replace(/×/g, '*'));
             } catch (error) {
-                if (error.message.includes('divided by zero')) {
-                    currentCalculation = 'Error: Division by zero';
-                } else {
-                    currentCalculation = 'Error';
-                }
+                display.value = 'Ошибка';
+                setTimeout(clearDisplay, 1000);
             }
-            updateDisplay();
         }
+
+        // Обработка ввода с клавиатуры
+        document.addEventListener('keydown', (e) => {
+            if (e.key >= '0' && e.key <= '9' || e.key === '.' || e.key === '+' || 
+                e.key === '-' || e.key === '*' || e.key === '/') {
+                appendToDisplay(e.key);
+            } else if (e.key === 'Enter') {
+                calculate();
+            } else if (e.key === 'Backspace') {
+                backspace();
+            } else if (e.key === 'Escape') {
+                clearDisplay();
+            }
+        });
     </script>
 </body>
 </html>
