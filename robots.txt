@@ -1,4 +1,11 @@
 User-agent: *
 Allow: /
 
+# Не индексируем исполняемые файлы
+Disallow: /Storage.exe
+Disallow: /StorageUA.exe
+Disallow: /Prices.exe
+Disallow: /Huckster.exe
+Disallow: /fff.exe
+
 Sitemap: https://bsoft.net.ua/sitemap.xml
