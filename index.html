@@ -1,83 +1,308 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Babylon Soft - Современные программы</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="icon" href="bsicon.ico" type="image/x-icon">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Babylon Soft — программы для учёта, склада и закупок малого бизнеса</title>
+  <meta name="description" content="Babylon Soft — надёжные программы для малого бизнеса: складской учёт, производство, розница и закупки по прайсам поставщиков. Просто, быстро, без сложного внедрения.">
+  <link rel="canonical" href="https://bsoft.net.ua/">
+  <link rel="icon" href="/bsicon.ico" type="image/x-icon">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Babylon Soft">
+  <meta property="og:title" content="Babylon Soft — учёт, склад и закупки под контролем">
+  <meta property="og:description" content="Программы для малого бизнеса: склад, производство, розница и закупки по прайсам. Без Excel и бумажки.">
+  <meta property="og:url" content="https://bsoft.net.ua/">
+  <meta property="og:image" content="https://bsoft.net.ua/og-image.png">
+  <meta property="og:locale" content="ru_UA">
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Babylon Soft — учёт, склад и закупки под контролем">
+  <meta name="twitter:description" content="Программы для малого бизнеса: склад, производство, розница и закупки по прайсам.">
+  <meta name="twitter:image" content="https://bsoft.net.ua/og-image.png">
+
+  <link rel="stylesheet" href="/css/styles.css">
+  <noscript><style>.reveal{opacity:1;transform:none}</style></noscript>
 </head>
 <body>
-    <header>
-        <div class="overlay">
-            <div class="container">
-                <h1>Babylon Soft</h1>
-                <p>Решения для автоматизации и управления малым бизнесом</p>
-            </div>
-        </div>
-    </header>
-    <main>
-        <section id="about" class="about">
-            <div class="container">
-                <h2>О компании</h2>
-                <div class="about-content">
-                    <p>
-                        Babylon Soft занимается разработкой инновационного программного обеспечения, 
-                        которое помогает предпринимателям эффективно управлять своим бизнесом. 
-                        Наши программы известны надежностью, простотой использования и адаптируемостью к любым требованиям.
-                    </p>
-                </div>
-            </div>
-        </section>
-<main>
-    <section class="programs">
-        <div class="container">
-            <h2>Наши программы</h2>
-            <div class="card">
-                <h3>Storage</h3>
-                <p>
-                    Программа для учета на складе, автоматизации производства и управления заказами.
-                    Простая в использовании, но мощная для бизнеса.
-                </p>
-                <a href="storage.html" class="btn">Подробнее</a>
-            </div>
-                <div class="card">
-                <h3>StorageUA</h3>
-                <p>
-                    Программа для учета на складе, автоматизации производства и управления заказами.
-                    Простая в использовании, но мощная для бизнеса.
-                </p>
-                <a href="storageua.html" class="btn">Подробнее</a>
-            </div>
 
-            <div class="card">
-                <h3>Prices</h3>
-                <p>
-                    Помощь в формировании заказов на закупку по прайс-листам поставщиков. 
-                    Автоматизация выбора оптимальных цен.
-                </p>
-                <a href="prices.html" class="btn">Подробнее</a>
-            </div>
-            
-            <div class="card">
-                <h3>Huckster</h3>
-                <p>
-                 Программа для управления товарным учетом, инвентаризацией и заказами в розничной и оптовой торговле. 
-                </p>
-                <a href="huckster.html" class="btn">Подробнее</a>
-            </div>
+  <!-- ===== NAV ===== -->
+  <header class="nav">
+    <div class="container nav__inner">
+      <a class="brand" href="/" aria-label="Babylon Soft — на главную">
+        <span class="brand__mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 8 12 3 3 8v8l9 5 9-5V8Z"/><path d="m3 8 9 5 9-5"/><path d="M12 13v8"/></svg>
+        </span>
+        <span>Babylon&nbsp;Soft<small>учёт · склад · закупки</small></span>
+      </a>
 
+      <nav class="nav__links" aria-label="Основная навигация">
+        <a href="/" class="is-active">Главная</a>
+        <a href="/storage">Storage</a>
+        <a href="/storageua">StorageUA</a>
+        <a href="/prices">Prices</a>
+        <a href="/huckster">Huckster</a>
+        <a href="/pricing">Цены</a>
+      </nav>
+
+      <div class="nav__cta">
+        <a class="btn btn--ghost" href="/contact">Контакты</a>
+        <button class="nav__toggle" aria-label="Открыть меню" aria-expanded="false">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile menu -->
+  <div class="mobile-menu" role="dialog" aria-modal="true" aria-label="Меню">
+    <div class="mobile-menu__panel">
+      <div class="mobile-menu__head">
+        <span class="brand"><span class="brand__mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 8 12 3 3 8v8l9 5 9-5V8Z"/><path d="m3 8 9 5 9-5"/><path d="M12 13v8"/></svg></span>Babylon&nbsp;Soft</span>
+        <button class="mobile-menu__close" aria-label="Закрыть меню"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+      </div>
+      <a href="/" class="is-active">Главная</a>
+      <a href="/storage">Storage</a>
+      <a href="/storageua">StorageUA</a>
+      <a href="/prices">Prices</a>
+      <a href="/huckster">Huckster</a>
+      <a href="/pricing">Цены</a>
+      <a href="/contact">Контакты</a>
+      <a class="btn btn--primary btn--block" href="/pricing">Смотреть программы</a>
+    </div>
+  </div>
+
+  <main>
+    <!-- ===== HERO ===== -->
+    <section class="hero">
+      <div class="container hero__grid">
+        <div>
+          <span class="hero__badge reveal"><span class="dot"></span> Надёжный учёт для малого бизнеса</span>
+          <h1 class="reveal reveal-d1">Склад, заказы и цены — <span class="text-grad">под полным контролем</span></h1>
+          <p class="hero__sub reveal reveal-d2">Babylon Soft — программы для предпринимателей: складской учёт, производство, розница и закупки по прайсам поставщиков. Без Excel, без бумажки, без сложного внедрения.</p>
+          <div class="hero__actions reveal reveal-d3">
+            <a class="btn btn--primary btn--lg" href="#products">
+              Смотреть программы
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+            <a class="btn btn--ghost btn--lg" href="/pricing">Цены</a>
+          </div>
+          <div class="hero__meta reveal reveal-d3">
+            <div><b>4</b><span>программы под задачи бизнеса</span></div>
+            <div><b>1 клик</b><span>до запуска — установка за минуты</span></div>
+            <div><b>24/7</b><span>работает локально, без интернета</span></div>
+          </div>
         </div>
+
+        <div class="hero__visual reveal reveal-d2" aria-hidden="true">
+          <div class="hero-card">
+            <div class="hero-card__top">
+              <b>Остатки на складах</b>
+              <span class="tag">в реальном времени</span>
+            </div>
+            <div class="hero-card__rows">
+              <div class="hero-row">
+                <span class="hero-row__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 8 12 3 3 8v8l9 5 9-5V8Z"/><path d="m3 8 9 5 9-5"/></svg></span>
+                <div><b>Склад «Центральный»</b><span>1 240 позиций</span></div>
+                <span class="val ok">в норме</span>
+              </div>
+              <div class="hero-row">
+                <span class="hero-row__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21V8l9-5 9 5v13"/><path d="M9 21v-6h6v6"/></svg></span>
+                <div><b>Производство</b><span>себестоимость посчитана</span></div>
+                <span class="val ok">−12%</span>
+              </div>
+              <div class="hero-row">
+                <span class="hero-row__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18M16 10a4 4 0 0 1-8 0"/></svg></span>
+                <div><b>Заказ на закупку</b><span>по прайсам 3 поставщиков</span></div>
+                <span class="val ok">готов</span>
+              </div>
+            </div>
+          </div>
+          <div class="float-chip float-chip--1">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+            Отчёт сформирован
+          </div>
+          <div class="float-chip float-chip--2">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+            Оптимум цены найден
+          </div>
+        </div>
+      </div>
     </section>
-</main>
-    </main>
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <p>&copy; 2024 Babylon Soft. Все права защищены.</p>
-                <p>Email: <a href="mailto:support@bsoft.net.ua">support@bsoft.net.ua</a></p>
-            </div>
+
+    <!-- ===== PAIN / VALUE ===== -->
+    <section class="section section--soft">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Что мы решаем</span>
+          <h2>Хватит вести бизнес «на коленке»</h2>
+          <p>Три проблемы, с которыми сталкивается каждый, кто торгует и хранит товар. Мы убираем их одной программой.</p>
         </div>
-    </footer>
+        <div class="grid grid--3">
+          <article class="card reveal">
+            <div class="card__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 8 12 3 3 8v8l9 5 9-5V8Z"/><path d="m3 8 9 5 9-5"/><path d="M12 13v8"/></svg></div>
+            <h3>Хаос в остатках</h3>
+            <p>Видите точные остатки на каждом складе и точке в реальном времени — без ручного пересчёта и «а где это лежит?».</p>
+          </article>
+          <article class="card reveal reveal-d1">
+            <div class="card__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18M16 10a4 4 0 0 1-8 0"/></svg></div>
+            <h3>Рутина с закупками</h3>
+            <p>Заказы по прайсам поставщиков формируются автоматически, а программа сама подбирает оптимальную закупочную цену.</p>
+          </article>
+          <article class="card reveal reveal-d2">
+            <div class="card__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20a8 8 0 1 0 0-16 8 8 0 0 0 0 16Z"/><path d="m9 12 2 2 4-4"/></svg></div>
+            <h3>Сложный учёт</h3>
+            <p>Простой интерфейс, который освоит любой сотрудник за один день. Себестоимость, отчёты и печать — в пару кликов.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== PRODUCTS ===== -->
+    <section class="section" id="products">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Наши программы</span>
+          <h2>Выберите инструмент под свою задачу</h2>
+          <p>Четыре программы, которые работают по отдельности и отлично сочетаются между собой.</p>
+        </div>
+        <div class="grid grid--4">
+          <article class="card reveal">
+            <div class="card__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 8 12 3 3 8v8l9 5 9-5V8Z"/><path d="m3 8 9 5 9-5"/><path d="M12 13v8"/></svg></div>
+            <h3>Storage</h3>
+            <p>Склад, производство и торговля: остатки, себестоимость, скидки, отчёты.</p>
+            <a class="card__link" href="/storage">Подробнее <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+            <div class="card__price"><b>1 000</b><span>грн / $50</span></div>
+          </article>
+
+          <article class="card card--featured reveal reveal-d1">
+            <div class="card__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><path d="m9 12 2 2 4-4"/></svg></div>
+            <h3>StorageUA</h3>
+            <p>Всё из Storage + работа с украинскими ПРРО. Адаптирована под украинских пользователей.</p>
+            <a class="card__link" href="/storageua">Подробнее <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+            <div class="card__price"><b>2 000</b><span>грн / $100</span></div>
+          </article>
+
+          <article class="card reveal reveal-d2">
+            <div class="card__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+            <h3>Prices</h3>
+            <p>Закупки по прайсам поставщиков с автоматическим выбором оптимальной цены.</p>
+            <a class="card__link" href="/prices">Подробнее <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+            <div class="card__price"><b>600</b><span>грн / $30</span></div>
+          </article>
+
+          <article class="card reveal reveal-d3">
+            <div class="card__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9 5 3h14l2 6"/><path d="M4 9v11a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1V9"/><path d="M9 21v-6h6v6"/></svg></div>
+            <h3>Huckster</h3>
+            <p>Учёт, инвентаризация и заказы для розничной и оптовой торговли.</p>
+            <a class="card__link" href="/huckster">Подробнее <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+            <div class="card__price"><b>800</b><span>грн / $40</span></div>
+          </article>
+        </div>
+        <div class="center mt-4 reveal">
+          <a class="btn btn--soft" href="/pricing">Сравнить все программы и цены</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== HOW IT WORKS ===== -->
+    <section class="section section--soft">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Как это работает</span>
+          <h2>Запуск за три шага</h2>
+          <p>Никаких долгих внедрений и настройщиков. Всё делаете сами — мы рядом, если понадобится помощь.</p>
+        </div>
+        <div class="steps">
+          <div class="step reveal">
+            <div class="step__num">1</div>
+            <b>Скачайте программу</b>
+            <p>Выберите программу под задачу и скачайте установщик. Установка занимает пару минут.</p>
+          </div>
+          <div class="step reveal reveal-d1">
+            <div class="step__num">2</div>
+            <b>Загрузите свой товар</b>
+            <p>Импортируйте номенклатуру и остатки из Excel. Программа подхватит структуру вашего бизнеса.</p>
+          </div>
+          <div class="step reveal reveal-d2">
+            <div class="step__num">3</div>
+            <b>Ведите учёт</b>
+            <p>Себестоимость, заказы, скидки и отчёты программа считает сама. Вы просто работаете.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== WHY US ===== -->
+    <section class="section">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Почему Babylon Soft</span>
+          <h2>Сделано для тех, кто ценит своё время</h2>
+        </div>
+        <div class="grid grid--3">
+          <div class="feature reveal"><span class="feature__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8Z"/></svg></span><div><b>Простота</b><span>Интерфейс, который понятен с первого дня. Без курсов и инструкций на 100 страниц.</span></div></div>
+          <div class="feature reveal reveal-d1"><span class="feature__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/></svg></span><div><b>Надёжность</b><span>Пользователи, права доступа и автоматические резервные копии базы данных.</span></div></div>
+          <div class="feature reveal reveal-d2"><span class="feature__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12h6M12 9v6"/><circle cx="12" cy="12" r="9"/></svg></span><div><b>Работают вместе</b><span>Storage, Prices и Huckster обмениваются данными — единый контур учёта.</span></div></div>
+          <div class="feature reveal"><span class="feature__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"/><path d="M14 2v6h6M9 15h6M9 11h2"/></svg></span><div><b>Отчёты и печать</b><span>Готовые отчёты и корректируемые формы, совместимые с MS Word.</span></div></div>
+          <div class="feature reveal reveal-d1"><span class="feature__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 1 0 10 10"/><path d="M12 6v6l4 2"/><path d="M18 2l4 4-4 4"/></svg></span><div><b>Работает локально</b><span>Программы не зависят от интернета — данные всегда под рукой и под контролем.</span></div></div>
+          <div class="feature reveal reveal-d2"><span class="feature__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2Z"/></svg></span><div><b>Поддержка</b><span>Встроенная справка и живая поддержка по email — ответим на любой вопрос.</span></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CTA ===== -->
+    <section class="section">
+      <div class="container">
+        <div class="cta-band reveal">
+          <h2>Готовы навести порядок в учёте?</h2>
+          <p>Выберите программу, скачайте и начните работать уже сегодня. А если сомневаетесь — напишите, поможем подобрать.</p>
+          <div class="btn-group" style="justify-content:center">
+            <a class="btn btn--white btn--lg" href="/pricing">Смотреть программы</a>
+            <a class="btn btn--ghost btn--lg" href="/contact" style="background:transparent;color:#fff;border-color:rgba(255,255,255,.5)">Задать вопрос</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div>
+          <a class="brand" href="/">
+            <span class="brand__mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 8 12 3 3 8v8l9 5 9-5V8Z"/><path d="m3 8 9 5 9-5"/><path d="M12 13v8"/></svg></span>
+            <span>Babylon&nbsp;Soft<small>учёт · склад · закупки</small></span>
+          </a>
+          <p>Программы для малого бизнеса: складской учёт, производство, розница и закупки по прайсам поставщиков.</p>
+        </div>
+        <div>
+          <h4>Программы</h4>
+          <div class="footer__links">
+            <a href="/storage">Storage</a>
+            <a href="/storageua">StorageUA</a>
+            <a href="/prices">Prices</a>
+            <a href="/huckster">Huckster</a>
+            <a href="/pricing">Цены</a>
+          </div>
+        </div>
+        <div>
+          <h4>Контакты</h4>
+          <div class="footer__links">
+            <a href="mailto:support@bsoft.net.ua">support@bsoft.net.ua</a>
+            <a href="/contact">Страница контактов</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <span>© <span data-year>2026</span> Babylon Soft. Все права защищены.</span>
+        <a href="https://github.com/Volodymyr271/bsoftsyte" rel="noopener">Базовая версия на GitHub</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/main.js"></script>
 </body>
 </html>
