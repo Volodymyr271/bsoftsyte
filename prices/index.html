@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prices — закупки по прайсам поставщиков | Babylon Soft</title>
+  <meta name="description" content="Prices — автоматическое формирование заказов на закупку по прайсам поставщиков. Импорт из Excel, авто-выбор оптимальной цены, экспорт заказа. 600 грн.">
+  <link rel="canonical" href="https://bsoft.net.ua/prices">
+  <link rel="icon" href="/bsicon.ico" type="image/x-icon">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Babylon Soft">
+  <meta property="og:title" content="Prices — закупки по прайсам поставщиков">
+  <meta property="og:description" content="Импорт прайсов из Excel, авто-выбор оптимальной цены, экспорт заказа поставщику.">
+  <meta property="og:url" content="https://bsoft.net.ua/prices">
+  <meta property="og:locale" content="ru_UA">
+  <meta property="og:image" content="https://bsoft.net.ua/og-image.png">
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Prices — закупки по прайсам поставщиков">
+  <meta name="twitter:description" content="Импорт прайсов из Excel, авто-выбор оптимальной цены, экспорт заказа поставщику.">
+  <meta name="twitter:image" content="https://bsoft.net.ua/og-image.png">
+  <link rel="stylesheet" href="/css/styles.css">
+  <noscript><style>.reveal{opacity:1;transform:none}</style></noscript>
+</head>
+<body>
+
+  <header class="nav">
+    <div class="container nav__inner">
+      <a class="brand" href="/" aria-label="Babylon Soft — на главную">
+        <span class="brand__mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 8 12 3 3 8v8l9 5 9-5V8Z"/><path d="m3 8 9 5 9-5"/><path d="M12 13v8"/></svg></span>
+        <span>Babylon&nbsp;Soft<small>учёт · склад · закупки</small></span>
+      </a>
+      <nav class="nav__links" aria-label="Основная навигация">
+        <a href="/">Главная</a>
+        <a href="/storage">Storage</a>
+        <a href="/storageua">StorageUA</a>
+        <a href="/prices" class="is-active">Prices</a>
+        <a href="/huckster">Huckster</a>
+        <a href="/pricing">Цены</a>
+      </nav>
+      <div class="nav__cta">
+        <a class="btn btn--ghost" href="/contact">Контакты</a>
+        <button class="nav__toggle" aria-label="Открыть меню" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+      </div>
+    </div>
+  </header>
+
+  <div class="mobile-menu" role="dialog" aria-modal="true" aria-label="Меню">
+    <div class="mobile-menu__panel">
+      <div class="mobile-menu__head">
+        <span class="brand"><span class="brand__mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 8 12 3 3 8v8l9 5 9-5V8Z"/><path d="m3 8 9 5 9-5"/><path d="M12 13v8"/></svg></span>Babylon&nbsp;Soft</span>
+        <button class="mobile-menu__close" aria-label="Закрыть меню"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+      </div>
+      <a href="/">Главная</a>
+      <a href="/storage">Storage</a>
+      <a href="/storageua">StorageUA</a>
+      <a href="/prices" class="is-active">Prices</a>
+      <a href="/huckster">Huckster</a>
+      <a href="/pricing">Цены</a>
+      <a href="/contact">Контакты</a>
+      <a class="btn btn--primary btn--block" href="/pricing">Смотреть программы</a>
+    </div>
+  </div>
+
+  <main>
+    <!-- ===== PRODUCT HERO ===== -->
+    <section class="phero">
+      <div class="container phero__grid">
+        <div>
+          <nav class="crumbs" aria-label="Хлебные крошки">
+            <a href="/">Главная</a>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+            <span>Prices</span>
+          </nav>
+          <h1 class="reveal">Prices</h1>
+          <p class="phero__sub reveal reveal-d1">Формируйте заказы на закупку по прайсам поставщиков без ручного пересчёта. Программа сама подберёт оптимальную закупочную цену и подготовит заказ к отправке.</p>
+          <div class="phero__actions reveal reveal-d2">
+            <a class="btn btn--primary btn--lg" href="https://github.com/Volodymyr271/bsoftsyte/releases/download/prices-3.03/Prices.exe" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+              Скачать Prices 3.03
+            </a>
+            <a class="btn btn--ghost btn--lg" href="/pricing">Сравнить с другими</a>
+          </div>
+        </div>
+        <div class="phero__price reveal reveal-d2">
+          <div class="lbl">Цена</div>
+          <div class="amt">600 грн</div>
+          <div class="alt">или $30</div>
+          <div class="note">Разовая покупка · регистрация бесплатная, коммерческая или сетевая</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== HOW / BENEFITS ===== -->
+    <section class="section section--soft">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Как это работает</span>
+          <h2>Закупка в три шага</h2>
+          <p>От прайса поставщика до готового заказа — без калькулятора и ручного сравнения цен.</p>
+        </div>
+        <div class="steps">
+          <div class="step reveal">
+            <div class="step__num">1</div>
+            <b>Импортируйте прайсы</b>
+            <p>Загрузите прайс-листы и перечень товара из Microsoft Excel. Программа подхватит структуру.</p>
+          </div>
+          <div class="step reveal reveal-d1">
+            <div class="step__num">2</div>
+            <b>Подберите цену</b>
+            <p>Prices автоматически сравнивает предложения и подсвечивает оптимальную закупочную цену.</p>
+          </div>
+          <div class="step reveal reveal-d2">
+            <div class="step__num">3</div>
+            <b>Отправьте заказ</b>
+            <p>Экспортируйте готовый заказ в Excel и отправьте поставщику. Всё уже посчитано.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== FEATURES ===== -->
+    <section class="section">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Возможности</span>
+          <h2>Что умеет Prices</h2>
+        </div>
+        <div class="info-grid">
+          <div class="info-box reveal">
+            <h3><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></span>Закупки</h3>
+            <ul class="check-list">
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Импорт прайс-листов и перечня товара из Excel</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Автоматизированный выбор оптимальной закупочной цены</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Экспорт заказа в Excel для отправки поставщику</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Быстрый поиск и наценка товаров в прайс-листах</li>
+            </ul>
+          </div>
+          <div class="info-box reveal reveal-d1">
+            <h3><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/></svg></span>Безопасность и справка</h3>
+            <ul class="check-list">
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Регистрация пользователей, работа с документами под учётной записью</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Резервное копирование базы данных</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Контекстная справка (Microsoft HTML Help)</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== INTEGRATION ===== -->
+    <section class="section section--soft">
+      <div class="container">
+        <div class="info-box reveal" style="max-width:760px;margin:0 auto">
+          <h3><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12h6M12 9v6"/><circle cx="12" cy="12" r="9"/></svg></span>Интеграция</h3>
+          <p class="mb-2">Prices встраивается в единый контур учёта Babylon Soft.</p>
+          <ul class="check-list">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span><b>Storage</b> — складской учёт, производство, торговля</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span><b>Huckster</b> — управление магазинами и торговыми точками</span></li>
+          </ul>
+          <div class="btn-group mt-3">
+            <a class="btn btn--soft" href="/storage">Узнать о Storage</a>
+            <a class="btn btn--ghost" href="/huckster">Узнать о Huckster</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CTA ===== -->
+    <section class="section">
+      <div class="container">
+        <div class="cta-band reveal">
+          <h2>Покупайте по лучшей цене</h2>
+          <p>Prices сравнивает прайсы поставщиков и формирует заказ за минуты — без ручного пересчёта.</p>
+          <div class="btn-group" style="justify-content:center">
+            <a class="btn btn--white btn--lg" href="https://github.com/Volodymyr271/bsoftsyte/releases/download/prices-3.03/Prices.exe" rel="noopener">Скачать Prices 3.03</a>
+            <a class="btn btn--ghost btn--lg" href="/contact" style="background:transparent;color:#fff;border-color:rgba(255,255,255,.5)">Есть вопрос?</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div>
+          <a class="brand" href="/"><span class="brand__mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 8 12 3 3 8v8l9 5 9-5V8Z"/><path d="m3 8 9 5 9-5"/><path d="M12 13v8"/></svg></span><span>Babylon&nbsp;Soft<small>учёт · склад · закупки</small></span></a>
+          <p>Программы для малого бизнеса: складской учёт, производство, розница и закупки по прайсам поставщиков.</p>
+        </div>
+        <div>
+          <h4>Программы</h4>
+          <div class="footer__links"><a href="/storage">Storage</a><a href="/storageua">StorageUA</a><a href="/prices">Prices</a><a href="/huckster">Huckster</a><a href="/pricing">Цены</a></div>
+        </div>
+        <div>
+          <h4>Контакты</h4>
+          <div class="footer__links"><a href="mailto:support@bsoft.net.ua">support@bsoft.net.ua</a><a href="/contact">Страница контактов</a></div>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <span>© <span data-year>2026</span> Babylon Soft. Все права защищены.</span>
+        <a href="https://github.com/Volodymyr271/bsoftsyte" rel="noopener">Базовая версия на GitHub</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/main.js"></script>
+</body>
+</html>
