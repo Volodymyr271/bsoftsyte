@@ -230,6 +230,7 @@ p { color: var(--text-muted); }
 .hero-row span { font-size: .85rem; color: var(--text-faint); }
 .hero-row .val { margin-left: auto; font-weight: 800; font-size: .95rem; }
 .hero-row .val.ok { color: var(--success); }
+.hero-row .val.warn { color: var(--warning); }
 .float-chip {
   position: absolute; background: #fff; border: 1px solid var(--border); border-radius: var(--radius);
   box-shadow: var(--shadow); padding: 12px 16px; display: flex; align-items: center; gap: 10px;
