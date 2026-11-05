@@ -22,8 +22,71 @@
   <meta name="twitter:description" content="Программы для малого бизнеса: склад, производство, розница и закупки по прайсам.">
   <meta name="twitter:image" content="https://bsoft.net.ua/og-image.png">
 
+  <meta name="theme-color" content="#4f46e5">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="stylesheet" href="/css/styles.css">
   <noscript><style>.reveal{opacity:1;transform:none}</style></noscript>
+
+  <!-- Structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://bsoft.net.ua/#org",
+        "name": "Babylon Soft",
+        "url": "https://bsoft.net.ua/",
+        "logo": "https://bsoft.net.ua/bsicon.ico",
+        "email": "support@bsoft.net.ua",
+        "sameAs": ["https://github.com/Volodymyr271/bsoftsyte"]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://bsoft.net.ua/#website",
+        "url": "https://bsoft.net.ua/",
+        "name": "Babylon Soft",
+        "publisher": { "@id": "https://bsoft.net.ua/#org" },
+        "inLanguage": "ru"
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Есть ли бесплатная версия?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Да. Все программы полнофункциональные. Без регистрации — с более жёстким ограничением справочников контрагентов и товаров, при бесплатной регистрации — с менее жёстким. В купленной версии ограничений по справочникам нет." }
+          },
+          {
+            "@type": "Question",
+            "name": "Как оплатить программу?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Оплата разовая, без подписок и ежемесячных платежей. Подробности об оплате — по адресу support@bsoft.net.ua." }
+          },
+          {
+            "@type": "Question",
+            "name": "Работает ли программа без интернета?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Да. Программы работают локально на вашем компьютере, для повседневной работы интернет не нужен." }
+          },
+          {
+            "@type": "Question",
+            "name": "Что нужно для запуска?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Компьютер с Windows. Установка занимает пару минут, товар и остатки можно импортировать из Excel." }
+          },
+          {
+            "@type": "Question",
+            "name": "Чем StorageUA отличается от Storage?",
+            "acceptedAnswer": { "@type": "Answer", "text": "StorageUA — это Storage плюс поддержка украинских ПРРО (фискальных устройств). Версия адаптирована под украинских пользователей." }
+          },
+          {
+            "@type": "Question",
+            "name": "Можно ли попробовать программу перед покупкой?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Да. Скачайте программу и пользуйтесь без регистрации — она полнофункциональная, ограничены только справочники контрагентов и товаров." }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
 
@@ -98,34 +161,34 @@
         <div class="hero__visual reveal reveal-d2" aria-hidden="true">
           <div class="hero-card">
             <div class="hero-card__top">
-              <b>Сводка по бизнесу</b>
+              <b>Склад и операции</b>
               <span class="tag">в реальном времени</span>
             </div>
             <div class="hero-card__rows">
               <div class="hero-row">
-                <span class="hero-row__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 15v-4M12 15V7M17 15v-6"/></svg></span>
-                <div><b>Оборот за месяц</b><span>продажи и закупки</span></div>
-                <span class="val ok">124 500 грн</span>
+                <span class="hero-row__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 8 12 3 3 8v8l9 5 9-5V8Z"/><path d="m3 8 9 5 9-5"/><path d="M12 13v8"/></svg></span>
+                <div><b>Остатки</b><span>оптимальный уровень — без дефицита и пересорта</span></div>
+                <span class="val ok">В норме</span>
               </div>
               <div class="hero-row">
-                <span class="hero-row__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></span>
-                <div><b>Доход</b><span>после себестоимости</span></div>
-                <span class="val ok">38 200 грн</span>
+                <span class="hero-row__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="2" width="8" height="4" rx="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="m9 14 2 2 4-4"/></svg></span>
+                <div><b>Операции</b><span>каждое движение товара — зафиксировано</span></div>
+                <span class="val ok">128 сегодня</span>
               </div>
               <div class="hero-row">
-                <span class="hero-row__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></span>
-                <div><b>Долги</b><span>кто и сколько должен</span></div>
-                <span class="val warn">12 400 грн</span>
+                <span class="hero-row__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"/><path d="M14 2v6h6"/><path d="M9 13h6M9 17h6"/></svg></span>
+                <div><b>Отчёты</b><span>всё видно без бухгалтера</span></div>
+                <span class="val ok">Готовы</span>
               </div>
             </div>
           </div>
           <div class="float-chip float-chip--1">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
-            Долги под контролем
+            Остатки в норме
           </div>
           <div class="float-chip float-chip--2">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
-            Оптимум цены найден
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><path d="m9 12 2 2 4-4"/></svg>
+            Операции под контролем
           </div>
         </div>
       </div>
@@ -248,6 +311,43 @@
           <div class="feature reveal"><span class="feature__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"/><path d="M14 2v6h6M9 15h6M9 11h2"/></svg></span><div><b>Отчёты и печать</b><span>Готовые отчёты и корректируемые формы, совместимые с MS Word.</span></div></div>
           <div class="feature reveal reveal-d1"><span class="feature__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 1 0 10 10"/><path d="M12 6v6l4 2"/><path d="M18 2l4 4-4 4"/></svg></span><div><b>Работает локально</b><span>Программы не зависят от интернета — данные всегда под рукой и под контролем.</span></div></div>
           <div class="feature reveal reveal-d2"><span class="feature__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2Z"/></svg></span><div><b>Поддержка</b><span>Встроенная справка и живая поддержка по email — ответим на любой вопрос.</span></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== FAQ ===== -->
+    <section class="section section--soft" id="faq">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Частые вопросы</span>
+          <h2>Коротко о главном</h2>
+          <p>Не нашли ответ — напишите на <a href="mailto:support@bsoft.net.ua" style="color:var(--primary);font-weight:600">support@bsoft.net.ua</a>, ответим.</p>
+        </div>
+        <div class="faq reveal">
+          <details>
+            <summary>Есть ли бесплатная версия?</summary>
+            <p>Да. Все программы полнофункциональные. Без регистрации — с более жёстким ограничением справочников контрагентов и товаров, при бесплатной регистрации — с менее жёстким. В купленной версии ограничений по справочникам нет.</p>
+          </details>
+          <details>
+            <summary>Как оплатить программу?</summary>
+            <p>Оплата разовая, без подписок и ежемесячных платежей. Подробности об оплате — по адресу <a href="mailto:support@bsoft.net.ua">support@bsoft.net.ua</a>.</p>
+          </details>
+          <details>
+            <summary>Работает ли программа без интернета?</summary>
+            <p>Да. Программы работают локально на вашем компьютере, для повседневной работы интернет не нужен.</p>
+          </details>
+          <details>
+            <summary>Что нужно для запуска?</summary>
+            <p>Компьютер с Windows. Установка занимает пару минут, товар и остатки можно импортировать из Excel.</p>
+          </details>
+          <details>
+            <summary>Чем StorageUA отличается от Storage?</summary>
+            <p>StorageUA — это Storage плюс поддержка украинских ПРРО (фискальных устройств). Версия адаптирована под украинских пользователей.</p>
+          </details>
+          <details>
+            <summary>Можно ли попробовать программу перед покупкой?</summary>
+            <p>Да. Скачайте программу и пользуйтесь без регистрации — она полнофункциональная, ограничены только справочники контрагентов и товаров.</p>
+          </details>
         </div>
       </div>
     </section>
